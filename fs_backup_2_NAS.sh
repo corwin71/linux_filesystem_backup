@@ -30,7 +30,7 @@ IFS=$OLD_IFS
 if [[ $STATUS != 0 ]]; then
     echo "$(date)" >>$LOGFILE
     echo "Achtung! Backup error!" >>$LOGFILE
-    cat $LOGFILE | mail -v -s "Profstom share backup error!" $__email
+    cat $LOGFILE | mail -v -s "share backup error!" $__email
 
 else
     echo "$(date)" >>$LOGFILE
@@ -49,7 +49,7 @@ mount -t cifs -o user=$__NASusername,pass=$__NASpassword $__NASnetpath $__NASpat
     if [[ $? != 0 ]]; then
 	echo "$(date)" >>$LOGFILE
         echo "Achtung!	Mounting NAS error!" >>$LOGFILE
-        cat $LOGFILE | mail -v -s "Profstom share backup error!" $__email
+        cat $LOGFILE | mail -v -s "share backup error!" $__email
         exit
     fi
 	echo "$(date)" >>$LOGFILE
@@ -60,7 +60,7 @@ echo    	cp -f $__TargetD/$__Filename $__NASpath &>>$LOGFILE
     if [[ $? != 0 ]]; then
 	echo "$(date)" >>$LOGFILE
         echo "Achtung! Copy to NAS error!" >>$LOGFILE
-        cat $LOGFILE | mail -v -s "Profstom share backup error!" $__email
+        cat $LOGFILE | mail -v -s "share backup error!" $__email
     else
 	echo "$(date)" >>$LOGFILE
         echo "Ok. Copy to NAS complete." >>$LOGFILE
