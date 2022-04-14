@@ -12,7 +12,7 @@ __NASusername=backuper
 __NASpassword=password
 __SourceD="/u02/share/"	    	#Путь к файлам для резервирования (/ в конце)
 __TargetD="/extstorage/backups/sharebkp"     	#Путь, куда будут складываться бекапы на локальном сервере (/ в конце) 
-__email="test@test.com"
+__email="test@testdomain.com"
 
 echo  >$LOGFILE
 echo "====================================================="  >>$LOGFILE
